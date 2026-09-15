@@ -13,6 +13,13 @@ spec:
     targetRevision: main
   sources: []
   project: default
+  ignoreDifferences:
+    - group: apps
+      kind: StatefulSet
+      name: go-demo-app-nats
+      namespace: demo
+      jsonPointers:
+        - /spec/volumeClaimTemplates
   syncPolicy:
     automated:
       prune: true
